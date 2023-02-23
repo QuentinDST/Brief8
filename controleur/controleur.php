@@ -1,30 +1,21 @@
 <?php
 
-require 'modele/modele.php';
+require 'modele/article.php';
 
 function accueil() {
-  try {
-    $articles = getArticles();
-    var_dump($articles) ;
-    require 'vue/vueAccueil.php';
-  }
-  catch (Exception $e) {
-    $msgErreur = $e->getMessage();
-    require 'vue/vueErreur.php';
-  }
+  $article = new Article();
+  $articles = $article->getArticles();
+  require 'vue/vueAccueil.php';
 }
-?>
-
-<?php 
-// Affiche les détails sur un billet
+  
+// Affiche les détails sur un article
 function article($idArticle) {
-  $article = getArticle($idArticle);
+  $article = new Article();
+  $article = $article->getArticle($idArticle);
   require 'vue/vueArticle.php';
-};?>
+}
 
-<?php
 // Affiche une erreur
 function erreur($msgErreur) {
   require 'vue/vueErreur.php';
 }
-?>
