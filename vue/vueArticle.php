@@ -1,7 +1,5 @@
 <?php ob_start(); ?>
 
-
-
 <section>
     <div class="article-container">
       <div class="article-image">

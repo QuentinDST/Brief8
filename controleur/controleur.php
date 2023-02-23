@@ -1,24 +1,6 @@
 <?php
 
 require 'modele/modele.php';
-/* 
-try {
-  if (isset($_GET['action']) === 'article' && isset($_GET['id'])) {
-    $id = intval($_GET['id']);
-    if ($id != 0) {
-      $article = getArticle($id);
-      require 'vue/vueArticle.php';
-    
-    } else {
-      throw new Exception("Identifiant d'article incorrect");
-    }
-  } else {
-    throw new Exception("Action ou identifiant d'article incorrect");
-  }
-} catch (Exception $e) {
-  $msgErreur = $e->getMessage();
-  require 'vue/vueErreur.php';
-} */
 
 function accueil() {
   try {

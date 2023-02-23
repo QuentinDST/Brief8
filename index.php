@@ -1,6 +1,11 @@
 <?php 
 
-require 'controller/article.php';
+// Controleur Frontal: point d'entrée unique du site
+// 1. Le contrôleur frontal analyse la requête entrante et vérifie les paramètres fournis ;
+// 2. Il sélectionne et appelle l'action à réaliser en lui passant les paramètres nécessaires ;
+// 3. Si la requête est incohérente, il signale l'erreur à l'utilisateur.
+
+require 'controleur/controleur.php';
 
 try {
   if (isset($_GET['action'])) {

@@ -39,11 +39,9 @@
 </header>
 
 
+
 <main class="main">
 
-    <div class="title">
-        <h1 class="heading--title"> Retrouvez tous nos Instruments</h1>
-    </div>
 
     <section class="article">
 

@@ -1,6 +1,5 @@
 <?php ob_start() ?>
 
-
 <?php foreach ($articles as $article): ?>
     <div class="card box--container">
         <img class="card-img-article" src="<?= $article['img'] ?>" style="width: 15rem;" alt="Card image cap">
