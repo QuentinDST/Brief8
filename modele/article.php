@@ -11,7 +11,6 @@ class Article extends Modele{
       return $articles;
     }
 
-
     //Renvoie l'information d'un article dans une nouvelle page
     function getArticle($idArticle) {
       $sql = 'SELECT `code_article` as id, `nom`, `description`, `prix`, image as img FROM article WHERE code_article = ?;';

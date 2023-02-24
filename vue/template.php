@@ -33,11 +33,9 @@
 </header>
 
 <main class="main">
-    <section class="article">
 
         <?= $contenu ?>
-    
-    </section>
+        
 </main>       
 
 <footer class="footer">

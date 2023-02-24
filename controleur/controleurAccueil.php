@@ -1,7 +1,5 @@
 <?php 
 
-
-
 require_once 'modele/article.php';
 require_once 'vue/vue.php';
 
