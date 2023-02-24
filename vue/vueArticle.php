@@ -1,4 +1,4 @@
-<?php ob_start(); ?>
+<?php $this->titre = "BixMusic - " . $article['nom'];?> <!-- Affichage du titre principal + titre article -->
 
 <section>
     <div class="article-container">
@@ -12,7 +12,3 @@
       </div>
     </div>
 </section>
-
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require 'template.php'; ?>
