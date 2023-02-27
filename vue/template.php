@@ -22,8 +22,7 @@
         <a href="#contact">contact</a>
     </nav>
     <div class="icons">
-        <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"><a href="<?= "index.php?action=panier&id=" . $article['code_article'] ?>"></a></div>
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>
     <div class="search-form">
@@ -34,7 +33,7 @@
 
 <main class="main">
 
-        <?= $contenu ?>
+    <?= $contenu ?>
         
 </main>       
 

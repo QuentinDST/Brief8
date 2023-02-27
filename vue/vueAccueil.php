@@ -16,7 +16,7 @@
 
     </aside>
 
-
+    <button><a href="index.php?action=panier">voir mon panier</a></button>
     <?php foreach ($articles as $article): ?>
         <div class="card box--container" id="card">
             <img class="card-img-article" src="<?= $article['img'] ?>" style="width: 15rem;" alt="Card image cap">
@@ -25,7 +25,7 @@
                 <div class="price"><?= $article['prix'] ?>€</div>
                     <div class="card--icons">
                         <a href="<?= "index.php?action=article&id=" . $article['code_article'] ?>" class="btn--card fas fa-eye"></a>
-                        <a href="#" class="btn--card fas fa-shopping-cart"></a>
+                        <a href="<?= "index.php?action=panier&id=" . $article['code_article'] ?>" class="btn--card fas fa-shopping-cart"></a>
                     </div>
                 </div>
             </div>

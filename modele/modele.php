@@ -3,7 +3,7 @@
 abstract class Modele{
 
     public $bdd; // Objet PDO d'accès à la BD
-
+  
     
     protected function executerRequete($sql, $params = null) { // Exécute une requête SQL éventuellement paramétrée
       if ($params == null) {
