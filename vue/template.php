@@ -12,7 +12,7 @@
 
 <!-- header section starts  -->
 
-<header class="header">
+<!-- <header class="header">
     <a href="#" class="logo">
         <img src="contenu/img/logo.png" alt="">
     </a>
@@ -22,7 +22,7 @@
         <a href="#contact">contact</a>
     </nav>
     <div class="icons">
-        <div class="fas fa-shopping-cart" id="cart-btn"><a href="<?= "index.php?action=panier&id=" . $article['code_article'] ?>"></a></div>
+        <button class="fas fa-shopping-cart"><a href="index.php?action=panier"></a></button>
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>
     <div class="search-form">
@@ -30,7 +30,7 @@
         <label for="search-box" class="fas fa-search"></label>
     </div>
 </header>
-
+ -->
 <main class="main">
 
     <?= $contenu ?>

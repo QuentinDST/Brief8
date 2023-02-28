@@ -17,15 +17,19 @@ class Panier extends Modele {
     function ajouterArticle($idArticle, $quantite) {
         if(isset($this->articles[$idArticle])) {
             $this->articles[$idArticle] += $quantite;
-            echo "coucou panier.php";
         } else {
             $this->articles[$idArticle] = $quantite;
         }
         $this->sauvegarderPanier();
     }
     
-    function retirerArticle($idArticle) {
-        unset($this->articles[$idArticle]);
+    public function supprimerArticle($idArticle, $quantite) {
+        if (isset($this->panier[$idArticle])) {
+            $this->panier[$idArticle] -= $quantite;
+            if ($this->panier[$idArticle] <= 0) {
+                unset($this->panier[$idArticle]);
+            }
+        }
         $this->sauvegarderPanier();
     }
     

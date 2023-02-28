@@ -32,22 +32,27 @@ class Routeur{
                         else
                             throw new Exception("Id article non défini");
                         break;
+    
                     case 'panier':
                         if (isset($_GET['id'])) {
                             $idArticle = intval($_GET['id']);
-                            echo "idArticle : ".$idArticle ;
                             if ($idArticle != 0){
-                                /* echo "<script>alert('article ajouté au panier')</script>"; */
+                                echo "<script>alert('article ajouté au panier')</script>";
                                 $quantite= 1;
                                 $this->controlPanier->ajouterArticle($idArticle, $quantite);
                             }
                             else
                                 throw new Exception("Code article non valide");
                         }
-                        else{
+                        else {
                             $this->controlPanier->afficherPanier(); 
                         }
                         break;
+    
+                    case 'viderPanier':
+                        $this->controlPanier->viderPanier();
+                        break;  
+    
                     default:
                         throw new Exception("Action non valide");
                         break;

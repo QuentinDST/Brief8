@@ -16,7 +16,7 @@
 
     </aside>
 
-    <button><a href="index.php?action=panier">voir mon panier</a></button>
+    <div class="">
     <?php foreach ($articles as $article): ?>
         <div class="card box--container" id="card">
             <img class="card-img-article" src="<?= $article['img'] ?>" style="width: 15rem;" alt="Card image cap">
@@ -31,7 +31,7 @@
             </div>
         </div>
     <?php endforeach;?>
-
+    </div>
 </section>
 
 

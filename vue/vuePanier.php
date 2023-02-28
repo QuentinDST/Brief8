@@ -1,6 +1,21 @@
 <?php if(empty($panier)): ?>
     <p>Votre panier est vide.</p>
-<?php else: ?>    
+<?php else: ?>  
+    
+    <h1 class="panier--title">Voici votre panier</h1>
+
+    <div class="panier--container--btn">
+        <div class="panier--heading--btn">
+            <a href="index.php" class="panier--retour">Retour à l'accueil</a>
+        </div>
+
+        <div class="panier--heading--btn">
+            <form method="post" action="index.php?action=viderPanier">
+                <input type="submit" name="vider" value="Vider le panier" class="panier--vider" />
+            </form>
+        </div>
+    </div>
+    
     <table>
         <thead>
             <tr>
@@ -16,21 +31,24 @@
             
         <?php foreach ($getArticle as $article): ?>
             <tr>
-                <td><img src="<?= $article['img'] ?>" alt="article" style="width: 150px; height: 100px;"></td>
-                <td><?php echo $article['nom']; ?></td>
-                <td><?php echo $article['prix']; ?> €</td>
-                <td><?php echo $panier[$article['id']]; ?></td> <!-- Afficher la quantité pour l'article en cours -->
-                <td><?php echo $article['prix'] * $article['quantite']; ?> €</td> <!-- calcule le prix total de chaque article en multipliant le prix par la quantité correspondante. -->
+                <td><img src="<?= $article['img'] ?>" alt="article" style="width: 120px; height: 90px;"></td>
+                <td><?= $article['nom']; ?></td>
+                <td><?= $article['prix']; ?> €</td>
+                <td><?= $panier[$article['id']]; ?></td> <!-- Afficher la quantité pour l'article en cours -->
+                <td><?= $article['prix'] * $article['quantite']; ?> €</td> <!-- calcule le prix total de chaque article en multipliant le prix par la quantité correspondante. -->
                 <td>
-                <form method="post" action="index.php?action=retirer&idArticle=<?php echo $article['id']; ?>">
-                    <input type="hidden" name="idArticle" value="<?php echo $article['id']; ?>" />
-                    <input type="submit" name="retirer" value="retirer" />
-                </form>
-                <?php echo $article['quantite']; ?>
-                <form method="post" action="index.php?action=ajouter&idArticle=<?php echo $article['id']; ?>">
-                    <input type="hidden" name="idArticle" value="<?php echo $article['id']; ?>" />
-                    <input type="submit" name="ajouter" value="ajouter" />
-                </form>
+                <div class="panier--btn">
+                    <form method="post" action="index.php?action=supprimerArticle&id=<?= $article['id']; ?>">
+                        <input type="hidden" name="idArticle" value="<?= $article['id']; ?>" />
+                        <input type="submit" name="ajouter" value="+" class="panier--plus" />
+                    </form>
+                </div>
+                <div class="panier--btn">
+                    <form method="post" action="index.php?action=supprimerArticle&id=<?= $article['id']; ?>">
+                        <input type="hidden" name="idArticle" value="<?= $article['id']; ?>" />
+                        <input type="submit" name="retirer" value="-" class="panier--moins" />
+                    </form>
+                </div>
                 </td>
             </tr>
         <?php endforeach; ?>

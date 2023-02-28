@@ -18,8 +18,8 @@ class ControleurPanier extends Modele{
         $this->afficherPanier();
     }
     
-    public function retirerPanier($idArticle, $quantite) {
-        $this->panier->retirerArticle($idArticle, $quantite);
+    public function supprimerArticle($idArticle, $quantite) {
+        $this->panier->supprimerArticle($idArticle, $quantite);
         $this->afficherPanier();
     }
     
@@ -41,6 +41,6 @@ class ControleurPanier extends Modele{
         }
         
         $vue = new Vue('Panier');
-        $vue->generer(array('panier' => $panier, 'getArticle' => $getArticle, 'titre' => "Ma vue")) ; 
+        $vue->generer(array('panier' => $panier, 'getArticle' => $getArticle)) ; 
     }   
 }
