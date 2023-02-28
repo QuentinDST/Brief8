@@ -20,37 +20,37 @@ class Routeur{
     public function routerRequete(){
         try {
             if (isset($_GET['action'])) {
-                if ($_GET['action'] == 'article') {
-                    if (isset($_GET['id'])) {
-                        $id = intval($_GET['id']);
-                        if ($id != 0)
-                            $this->controlArticle->article($id);
-                        else
-                            throw new Exception("Code article non valide");
-                    }
-                    else
-                        throw new Exception("Id article non défini");
-                } 
-                elseif ($_GET['action'] == 'panier') {
-                    if (isset($_GET['id'])) {
-                       $idArticle = intval($_GET['id']);
-                       if ($id != 0){
-                        /* echo "<script>alert('article ajouté au panier')</script>"; */
-                        $quantite= 1;
-                        $this->controlPanier->ajouterArticle($idArticle, $quantite);
+                switch ($_GET['action']) {
+                    case 'article':
+                        if (isset($_GET['id'])) {
+                            $id = intval($_GET['id']);
+                            if ($id != 0)
+                                $this->controlArticle->article($id);
+                            else
+                                throw new Exception("Code article non valide");
                         }
                         else
-                            throw new Exception("Code article non valide");
+                            throw new Exception("Id article non défini");
+                        break;
+                    case 'panier':
+                        if (isset($_GET['id'])) {
+                            $idArticle = intval($_GET['id']);
+                            echo "idArticle : ".$idArticle ;
+                            if ($idArticle != 0){
+                                /* echo "<script>alert('article ajouté au panier')</script>"; */
+                                $quantite= 1;
+                                $this->controlPanier->ajouterArticle($idArticle, $quantite);
+                            }
+                            else
+                                throw new Exception("Code article non valide");
                         }
-                    else{
-                        echo "coucou";
-                        $this->controlPanier->afficherPanier(); 
-                        
-                    }
-                       
-                }
-                else {
-                    throw new Exception("Action non valide");
+                        else{
+                            $this->controlPanier->afficherPanier(); 
+                        }
+                        break;
+                    default:
+                        throw new Exception("Action non valide");
+                        break;
                 }
             }
             else {

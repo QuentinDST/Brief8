@@ -17,7 +17,7 @@ class Panier extends Modele {
     function ajouterArticle($idArticle, $quantite) {
         if(isset($this->articles[$idArticle])) {
             $this->articles[$idArticle] += $quantite;
-            echo "coucou";
+            echo "coucou panier.php";
         } else {
             $this->articles[$idArticle] = $quantite;
         }

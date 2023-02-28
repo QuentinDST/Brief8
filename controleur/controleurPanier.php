@@ -18,30 +18,29 @@ class ControleurPanier extends Modele{
         $this->afficherPanier();
     }
     
-    public function retirerPanier($idArticle) {
-       $this->panier->retirerArticle($idArticle);
+    public function retirerPanier($idArticle, $quantite) {
+        $this->panier->retirerArticle($idArticle, $quantite);
         $this->afficherPanier();
     }
     
     public function viderPanier() {
-        $this->panier->vider();
+        $this->panier->viderPanier();
         $this->afficherPanier();
     }
     
     public function afficherPanier() {
         $panier = $this->panier->getCookies();
-        var_dump($panier);
         $getArticle = array();
         if(!empty($panier)){
             foreach($panier as $key => $value){
                 $this->articleAdded = new Article();
                 $tmp = $this->articleAdded->getArticle($key);
+                $tmp['quantite'] = $value;
                 array_push($getArticle, $tmp);
-        } 
-
-        $vue = new Vue('Panier');
-        $vue->generer(array('panier' => $panier, 'article' => $getArticle));
+            } 
         }
+        
+        $vue = new Vue('Panier');
+        $vue->generer(array('panier' => $panier, 'getArticle' => $getArticle, 'titre' => "Ma vue")) ; 
     }   
 }
-

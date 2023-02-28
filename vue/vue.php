@@ -11,7 +11,7 @@ class Vue {
   }
 
   public function generer($donnees) { // Génère et affiche la vue
-      $this->titre = $donnees['titre']; // Récupération du titre de la vue
+      //$this->titre = $donnees['titre']; // Récupération du titre de la vue
       $contenu = $this->genererFichier($this->fichier, $donnees); // Génération de la partie spécifique de la vue
       $vue = $this->genererFichier('vue/template.php', array('titre' => $this->titre, 'contenu' => $contenu)); // Génération du gabarit commun utilisant la partie spécifique
       echo $vue; // Renvoi de la vue au navigateur
