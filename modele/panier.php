@@ -25,7 +25,9 @@ class Panier extends Modele {
     
     public function reduireArticle($idArticle, $quantite) {
         if(isset($this->articles[$idArticle])) {
-            $this->articles[$idArticle] -= $quantite;
+            if($this->articles[$idArticle] >= 1){
+                $this->articles[$idArticle] -= $quantite;
+            }
         } else {
             $this->articles[$idArticle] = $quantite;
         }
@@ -37,11 +39,26 @@ class Panier extends Modele {
         $this->sauvegarderPanier();
     }
     
+    function calculerMontantTotal() {
+        $total = 0;
+
+    }
+
     function getCookies() {
-        return $this->articles;
+        var_dump($this->articles);
+        return $this->articles; 
+        
     }
     
     private function sauvegarderPanier() {
-        setcookie($this->cookieName, serialize($this->articles), time() + (86400 * 30), "/");
+        $newArticle = array();
+        foreach($this->articles as $article => $quantite){
+            if ($quantite >= 0){
+                 $newArticle[$article] = $quantite;
+            }
+       echo $article . $quantite;
+        }
+        
+        setcookie($this->cookieName, serialize($newArticle), time() + (86400 * 30), "/");
     }
 }

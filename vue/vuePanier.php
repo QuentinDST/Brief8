@@ -38,8 +38,8 @@
                 <td><?= $article['prix'] * $article['quantite']; ?> €</td> <!-- calcule le prix total de chaque article en multipliant le prix par la quantité correspondante. -->
                 <td> 
                 <div class="panier--btn">
-                    <a href="<?= "index.php?action=panier&id=" . $article['id'] ?>">+</a>
-                    <a href="<?= "index.php?action=reduireArticle&id=" . $article['id'] ?>">-</a>
+                    <a href="<?= "index.php?action=panier&id=" . $article['id'] ?>" class="plus">+</a>
+                    <a href="<?= "index.php?action=reduireArticle&id=" . $article['id'] ?>" class="moins">-</a>
                 </div>
                 </td>
             </tr>

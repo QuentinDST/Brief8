@@ -55,7 +55,7 @@
     font-weight: bold;
 }
 
-.header .icons,a{
+.header .icons>a{
     color:var(--icons);
     cursor: pointer;
     font-size: 30px;
@@ -439,29 +439,27 @@ td{
     margin-bottom: 10px;
 }
 
-.panier--moins, .panier--plus{
-    border: 2px solid var(--card);
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 28px;
-    background-color: var(--bg);
+.panier--btn .plus{
+    font-size: 30px;
+    color: var(--icons);
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.panier--btn .moins{
+    font-size: 30px;
+    color: var(--icons);
     cursor: pointer;
 }
 
-.panier--plus:hover{
-    border: 2px solid var(--main-color);
-    width: 35px;
-    height: 35px;
+.panier--btn .plus:hover{
+    color: var(--main-color);
+    font-size: 35px;
 }
 
-.panier--moins:hover{
-    border: 2px solid var(--main-color);
-    width: 35px;
-    height: 35px;
+.panier--btn .moins:hover{
+    color: var(--main-color);
+    font-size: 35px;
 }
 
 /* FOOTER */
