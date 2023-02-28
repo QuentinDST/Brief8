@@ -55,14 +55,15 @@
     font-weight: bold;
 }
 
-.header .icons div{
+.header .icons,a{
     color:var(--icons);
     cursor: pointer;
     font-size: 30px;
     margin-left: 10px;
+    text-decoration: none;;
 }
 
-.header .icons div:hover{
+.header .icons a:hover{
     color:var(--icons-hover);
 }
 

@@ -36,18 +36,10 @@
                 <td><?= $article['prix']; ?> €</td>
                 <td><?= $panier[$article['id']]; ?></td> <!-- Afficher la quantité pour l'article en cours -->
                 <td><?= $article['prix'] * $article['quantite']; ?> €</td> <!-- calcule le prix total de chaque article en multipliant le prix par la quantité correspondante. -->
-                <td>
+                <td> 
                 <div class="panier--btn">
-                    <form method="post" action="index.php?action=supprimerArticle&id=<?= $article['id']; ?>">
-                        <input type="hidden" name="idArticle" value="<?= $article['id']; ?>" />
-                        <input type="submit" name="ajouter" value="+" class="panier--plus" />
-                    </form>
-                </div>
-                <div class="panier--btn">
-                    <form method="post" action="index.php?action=supprimerArticle&id=<?= $article['id']; ?>">
-                        <input type="hidden" name="idArticle" value="<?= $article['id']; ?>" />
-                        <input type="submit" name="retirer" value="-" class="panier--moins" />
-                    </form>
+                    <a href="<?= "index.php?action=panier&id=" . $article['id'] ?>">+</a>
+                    <a href="<?= "index.php?action=reduireArticle&id=" . $article['id'] ?>">-</a>
                 </div>
                 </td>
             </tr>

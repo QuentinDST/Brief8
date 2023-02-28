@@ -37,12 +37,27 @@ class Routeur{
                         if (isset($_GET['id'])) {
                             $idArticle = intval($_GET['id']);
                             if ($idArticle != 0){
-                                echo "<script>alert('article ajouté au panier')</script>";
                                 $quantite= 1;
                                 $this->controlPanier->ajouterArticle($idArticle, $quantite);
                             }
                             else
                                 throw new Exception("Code article non valide");
+                        }
+                        else {
+                            $this->controlPanier->afficherPanier(); 
+                        }
+                        break;
+
+                    case 'reduireArticle':
+                        if (isset($_GET['id'])) {
+                            $idArticle = intval($_GET['id']);
+                            if ($idArticle != 0){
+                                $quantite= 1;
+                                $this->controlPanier->reduireArticle($idArticle, $quantite);
+                            }
+                            else {
+                                throw new Exception("Code article non valide");
+                            }
                         }
                         else {
                             $this->controlPanier->afficherPanier(); 

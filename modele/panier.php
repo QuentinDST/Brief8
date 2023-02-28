@@ -23,12 +23,11 @@ class Panier extends Modele {
         $this->sauvegarderPanier();
     }
     
-    public function supprimerArticle($idArticle, $quantite) {
-        if (isset($this->panier[$idArticle])) {
-            $this->panier[$idArticle] -= $quantite;
-            if ($this->panier[$idArticle] <= 0) {
-                unset($this->panier[$idArticle]);
-            }
+    public function reduireArticle($idArticle, $quantite) {
+        if(isset($this->articles[$idArticle])) {
+            $this->articles[$idArticle] -= $quantite;
+        } else {
+            $this->articles[$idArticle] = $quantite;
         }
         $this->sauvegarderPanier();
     }
