@@ -41,6 +41,6 @@ class ControleurPanier extends Modele{
         }
         
         $vue = new Vue('Panier');
-        $vue->generer(array('panier' => $panier, 'getArticle' => $getArticle)) ; 
+        $vue->generer(array('panier' => $panier, 'getArticle' => $getArticle, 'total' => $total)) ; 
     }   
 }

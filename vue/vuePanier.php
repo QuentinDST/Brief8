@@ -28,7 +28,8 @@
             </tr>
         </thead>
         <tbody>
-            
+
+        <?php $total = 0; ?> <!-- On initialise le total à 0 en début de boucle -->
         <?php foreach ($getArticle as $article): ?>
             <tr>
                 <td><img src="<?= $article['img'] ?>" alt="article" style="width: 120px; height: 90px;"></td>
@@ -43,7 +44,16 @@
                 </div>
                 </td>
             </tr>
+
+            <?php $total += $article['prix'] * $panier[$article['id']]; ?> <!-- l'operateur += permet d'ajouter le prix récu -->
         <?php endforeach; ?>
         </tbody>
     </table>
 <?php endif; ?>
+
+<div class="panier--total">
+    <p>Total Panier : <?= $total ?> €</p>
+    <form method="post" action="#">
+        <input type="submit" name="vider" value="Valider le panier" class="panier--valider" />
+    </form>
+</div>
