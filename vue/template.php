@@ -17,8 +17,8 @@
         <img src="contenu/img/logo.png" alt="">
     </a>
     <nav class="navbar">
-        <a href="#home">BixMusic</a>
-        <a href="#shop">Shop</a>
+        <a href="index.php?action=admin">Admin</a>
+        <a href="#card">Shop</a>
         <a href="#contact">contact</a>
     </nav>
     <div class="icons">
@@ -32,9 +32,9 @@
 </header>
 
 <main class="main">
-
+    
     <?= $contenu ?>
-        
+  
 </main>       
 
 <footer class="footer">

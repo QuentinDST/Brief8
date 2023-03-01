@@ -111,7 +111,7 @@
 /* MAIN */
 
 .main{
-    margin-top: 150px;
+    margin-top: 160px;
 }
 
 .title{
@@ -180,6 +180,7 @@
     padding: 15px;
 }
 
+
 .article{
     display: flex;
     flex-direction: row;
@@ -203,7 +204,7 @@
 }
 
 .article .box--container:hover{
-    background-color: var(--bg);
+    background-color: var(--icons);
     cursor: pointer;
     -webkit-box-shadow: 0px 0px 27px 6px rgba(113, 108, 108, 0.46); 
     box-shadow: 0px 0px 20px 6px rgba(113, 108, 108, 0.46);
@@ -219,10 +220,6 @@
 }
 
 
-.article .box--container:hover{
-    border: solid 3px var(--main-color);
-}
-
 .card-body{
     height: 40%;
     padding: 15px;
@@ -234,6 +231,11 @@
     text-align: center;
 }
 
+.card-body h3{
+    color: var(--bg);
+    margin-bottom: 15px;
+}
+
 .card-title, .price{
     font-family: 'Roboto', sans-serif;
     color: var(--bg);
@@ -241,7 +243,7 @@
 
 .card-title, .price:hover{
     font-family: 'Roboto', sans-serif;
-    color: var(--card);
+    color: var(--bg);
 }
 
 .price{
@@ -320,29 +322,36 @@
   color: var(--card);
 }
 
-button{
-    margin-top: 40px;
+.article--info>a{
     padding: 10px;
-}
-
-button>a{
-    font-size: 20px;
-    font-weight: lighter;
-    padding: 20px;
+    font-size: 15px;
     color: (var(--card));
+    border: 1px solid var(--card);
+    border-radius: 4px;
 }
 
-button:hover{
-    font-weight: bold;
-    font-size: 22px;
-    background-color: var(--main-color);
+.article--info>a:hover{
+    font-size: 16px;
     color:var(--bg);
+    background-color: var(--main-color);
     border: none;
-    border-radius: 4px;
+    cursor: pointer;
 }
 
 
 /* VUE PANIER */
+
+.empty--panier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty--panier>p{
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--black);
+}
 
 h1{
     margin-top: 30px;

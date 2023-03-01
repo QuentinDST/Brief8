@@ -18,8 +18,17 @@ class ControleurPanier extends Modele{
         $this->afficherPanier();
     }
     
+    public function supprimerArticle($idArticle) {
+        $this->panier->supprimerArticle($idArticle);
+        $this->afficherPanier();
+    }
+    
     public function reduireArticle($idArticle, $quantite) {
-        $this->panier->reduireArticle($idArticle, $quantite);
+        if ($quantite > 0) {
+            $this->panier->reduireArticle($idArticle, $quantite);
+        } else {
+            $this->panier->supprimerArticle($idArticle, $quantite);
+        }
         $this->afficherPanier();
     }
     

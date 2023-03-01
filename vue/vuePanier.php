@@ -1,12 +1,18 @@
 <?php if(empty($panier)): ?>
-    <p>Votre panier est vide.</p>
+    <div class="empty--panier">
+        <p>Votre panier est vide.</p>
+        <div class="panier--heading--btn">
+            <a href="index.php" class="panier--retour">Retour à l'accueil</a>
+        </div>
+    </div>
+    
 <?php else: ?>  
     
     <h1 class="panier--title">Voici votre panier</h1>
 
     <div class="panier--container--btn">
         <div class="panier--heading--btn">
-            <a href="index.php" class="panier--retour">Retour à l'accueil</a>
+            <a href="index.php" class="panier--retour">Retour Accueil</a>
         </div>
 
         <div class="panier--heading--btn">
