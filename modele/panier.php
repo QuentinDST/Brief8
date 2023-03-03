@@ -9,7 +9,6 @@ class Panier extends Modele {
     
     function __construct() {
         if(isset($_COOKIE[$this->cookieName])) {
-            var_dump($_COOKIE);
             $this->articles = unserialize($_COOKIE[$this->cookieName]);
         }
     }

@@ -3,6 +3,7 @@
 require_once 'controleur/controleurAccueil.php';
 require_once 'controleur/controleurArticle.php';
 require_once 'controleur/controleurPanier.php';
+require_once 'controleur/controleurBackOffice.php';
 require_once 'vue/vue.php';
 
 class Routeur{
@@ -10,16 +11,20 @@ class Routeur{
     private $controlAccueil;
     private $controlArticle;
     private $controlPanier;
+    private $controlBackOffice;
 
     public function __construct() {
         $this->controlAccueil = new ControleurAccueil();
         $this->controlArticle = new ControleurArticle();
         $this->controlPanier = new ControleurPanier();
+        $this->controlBackOffice = new ControleurBackOffice();
     }
 
     public function routerRequete(){
         try {
+
             if (isset($_GET['action'])) {
+
                 switch ($_GET['action']) {
                     case 'article':
                         if (isset($_GET['id'])) {
@@ -67,7 +72,32 @@ class Routeur{
                     case 'viderPanier':
                         $this->controlPanier->viderPanier();
                         break;  
-    
+                        
+                    case 'authentifier':
+                        if (session_status()!='PHP_SESSION_ACTIVE'){
+                            session_start();
+                            var_dump($_SESSION);
+                        }
+                        if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
+                            $verif = $this->controlBackOffice->verifierIdentifiants($_SESSION['login'], $_SESSION['mdp']);                          
+                            if ($verif) {
+                                $this->controlBackOffice->afficherPageBackOffice();
+                            } else {                    
+                               $this->controlBackOffice->afficherVueLogin();
+                            }
+                        } else { 
+                            $this->controlBackOffice->afficherVueLogin();
+                        }
+                       
+                        break;
+
+                    case 'deconnexion':
+                        if (session_status()!='PHP_SESSION_ACTIVE'){
+                            session_start();
+                          }
+                          $this->controlBackOffice->seDeconnecter();
+                          break;
+
                     default:
                         throw new Exception("Action non valide");
                         break;

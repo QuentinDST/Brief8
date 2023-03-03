@@ -10,15 +10,15 @@
 </head>
 <body>
 
-<!-- header section starts  -->
+<!-- HEADER section starts  -->
 
 <header class="header">
-    <a href="#" class="logo">
+    <a href="index.php" class="logo">
         <img src="contenu/img/logo.png" alt="">
     </a>
     <nav class="navbar">
-        <a href="index.php?action=admin">Admin</a>
-        <a href="#card">Shop</a>
+        <a href="index.php?action=authentifier">Admin</a>
+        <a href="index.php?action=panier">Shop</a>
         <a href="#contact">contact</a>
     </nav>
     <div class="icons">
@@ -31,11 +31,19 @@
     </div>
 </header>
 
+
+<!-- MAIN section starts  -->
+
+
 <main class="main">
     
     <?= $contenu ?>
   
-</main>       
+</main> 
+
+
+<!-- FOOTER section starts  -->
+
 
 <footer class="footer">
     <div class="share">
