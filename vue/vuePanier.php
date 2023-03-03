@@ -22,7 +22,7 @@
         </div>
     </div>
     
-    <table>
+    <table class="table--panier">
         <thead>
             <tr>
                 <th></th>

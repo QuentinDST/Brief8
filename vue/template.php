@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $this->titre?></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="contenu/style/style.css" type="text/css">
 </head>
 <body>
@@ -22,6 +22,7 @@
         <a href="#contact">contact</a>
     </nav>
     <div class="icons">
+        <a href="index.php?action=authentifier" class="fa-solid fa-user"></a>
         <a href="index.php?action=panier" class="fas fa-shopping-cart" id="cart-btn"></a>
         <a class="fas fa-bars" id="menu-btn"></a>
     </div>

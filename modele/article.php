@@ -6,7 +6,7 @@ class Article extends Modele{
     
     // Renvoie l'ensemble de mes articles
     function getArticles() {
-      $sql = 'SELECT code_article, nom, prix, image as img FROM article;';
+      $sql = 'SELECT code_article, nom, prix, image as img, Qte_stock as stock FROM article;';
       $articles = $this->executerRequete($sql);
       return $articles;
     }

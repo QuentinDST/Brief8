@@ -24,9 +24,7 @@ class ControleurBackOffice {
                 $this->afficherPageBackOffice();
             }
             else {
-                /* $this->afficherVueLogin(); */
-                echo "mot de passe incorrecte";
-
+                echo "<script>document.getElementById('message-erreur').style.display = 'block';</script>";
             }
         }
     }
@@ -50,7 +48,10 @@ class ControleurBackOffice {
 
     }
     function afficherPageBackOffice() {
+        $article = new Article();
+        $articles = $article->getArticles();
+
         $vue = new Vue("BackOffice");
-        $vue->generer(array());
+        $vue->generer(array('articles' => $articles));
     }
 }

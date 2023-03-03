@@ -1,6 +1,11 @@
 
 
 <div class="form--container">
+    <div class="form--erreur">
+        <?php if(!empty($erreur)): ?>
+            <p class="error-message"><?= $erreur ?></p>
+        <?php endif; ?>
+    </div>        
     
     <div class="form--image">
         <img src="contenu/img/user.png" alt="">
@@ -16,6 +21,7 @@
                 <input type="" name="mdp" id="mdp" required>
             </div>
         <input class="form--send" type="submit" value="Se connecter">
+
     </form>
     </div>
     
